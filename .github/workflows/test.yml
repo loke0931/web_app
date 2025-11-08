@@ -1,3 +1,19 @@
+name: Deploy React App to Pages
+
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
 jobs:
   deploy:
     environment:
@@ -5,7 +21,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -16,8 +32,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
-        run: npm run build   # создаёт статические файлы
+      - name: Build React App
+        run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -25,7 +41,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'  # папка с собранными файлами
+          path: 'build'
 
       - name: Deploy to GitHub Pages
         id: deployment
