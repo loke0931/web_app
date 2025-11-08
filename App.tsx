@@ -1,11 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Modal from './components/Modal';
-import ContactForm from './components/ContactForm';
-import HomePage from './pages/HomePage';
-import GuidePage from './pages/GuidePage';
+import Header from './components/Header.tsx';
+import Footer from './components/Footer.tsx';
+import Modal from './components/Modal.tsx';
+import ContactForm from './components/ContactForm.tsx';
+import HomePage from './pages/HomePage.tsx';
+import GuidePage from './pages/GuidePage.tsx';
 
 const App: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

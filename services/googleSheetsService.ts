@@ -1,4 +1,4 @@
-import { FormData } from '../types';
+import { FormData } from '../types.ts';
 
 // --- ИНСТРУКЦИЯ ПО НАСТРОЙКЕ GOOGLE SHEETS ---
 // Вы почти у цели! Осталось 3 простых шага:

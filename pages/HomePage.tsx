@@ -1,8 +1,8 @@
 
 import React from 'react';
-import Hero from '../components/Hero';
-import Features from '../components/Features';
-import WhyUs from '../components/WhyUs';
+import Hero from '../components/Hero.tsx';
+import Features from '../components/Features.tsx';
+import WhyUs from '../components/WhyUs.tsx';
 
 interface HomePageProps {
   onOpenModal: () => void;
